@@ -1,0 +1,16 @@
+{
+  "name": "shubham-kumar-portfolio",
+  "version": "1.0.0",
+  "description": "Premium responsive portfolio for Shubham Kumar",
+  "scripts": {
+    "dev": "python3 -m http.server 3000"
+  },
+  "keywords": [
+    "portfolio",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Shubham Kumar",
+  "license": "ISC"
+}
