@@ -208,5 +208,37 @@
 
   <!-- Scripts -->
   <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+(function () {
+    emailjs.init({
+        publicKey: "bcqL2tEwR-t_DzAky"
+    });
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const status = document.getElementById("form-status");
+    status.innerHTML = "Sending message...";
+
+    emailjs.sendForm(
+        "service_abss",
+        "template_532e8lk",
+        this
+    )
+    .then(function () {
+        status.innerHTML = "✅ Message sent successfully!";
+        document.getElementById("contact-form").reset();
+    })
+    .catch(function (error) {
+        status.innerHTML = "❌ Failed to send message.";
+        console.error("EmailJS Error:", error);
+    });
+});
+</script>
 </body>
 </html>
